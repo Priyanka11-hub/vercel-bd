@@ -1,0 +1,33 @@
+# ======================
+# Backend (Node/Express)
+# ======================
+backend/node_modules/
+backend/.env
+backend/.env.local
+backend/.env.*.local
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/pnpm-debug.log*
+backend/coverage/
+
+# ======================
+# Frontend (React + Tailwind)
+# ======================
+tailwind-react-landing-main/node_modules/
+tailwind-react-landing-main/build/
+tailwind-react-landing-main/.env
+tailwind-react-landing-main/.env.local
+tailwind-react-landing-main/.env.*.local
+tailwind-react-landing-main/npm-debug.log*
+tailwind-react-landing-main/yarn-debug.log*
+tailwind-react-landing-main/pnpm-debug.log*
+
+# ======================
+# Common / IDE / OS files
+# ======================
+*.DS_Store
+*.Thumbs.db
+.vscode/
+.idea/
+*.tmp
+*.temp
