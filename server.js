@@ -9,31 +9,31 @@ import authRoutes from "./routes/auth.js";
 import forgotRoutes from "./routes/forgotRoute.js";
 import contactRoute from "./routes/contactRoute.js";
 import schoolRoute from "./routes/schoolRoute.js";
-// import adminRoute from "./routes/adminRoute.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB connection (schoolNGODB from .env)
+// Test route
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully 🚀");
+});
+
+// MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
-// AUTH ROUTES (UNCHANGED)
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/auth", forgotRoutes);
-
-// CONTACT ROUTE (UNCHANGED)
 app.use("/api", contactRoute);
-
-// ✅ SCHOOL ROUTE (CORRECT)
 app.use("/api", schoolRoute);
 
-// app.use("/api", adminRoute);
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  console.log("Server running on 3000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
